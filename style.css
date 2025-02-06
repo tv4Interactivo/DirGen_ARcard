@@ -1,0 +1,26 @@
+#playBtn{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.493);
+	border-radius: 50%;
+	border: none;
+    z-index: 1;
+}
+
+i{
+	color: #000056;
+	font-size: 80px;
+}
+
+@media only screen and (min-width: 768px) {
+	.video{
+		width: auto;
+		height: 100%;
+	}
+	
+  } 

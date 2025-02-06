@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <title>Rafael Gutiérrez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+	  <link rel="icon" type="image/x-icon" href="./assets/tvcuatro_ico.jpg">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <!-- <button id="playBtn" onclick="playVid()" type="button" hidden><i class="fa-regular fa-circle-play"></i></button> -->
+
+    <a-scene
+      mindar-image="filterMinCF:0.1; filterBeta: 10; imageTargetSrc: ./targets.mind;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+      color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
+    >
+      <a-assets>
+        <video id="DirGen" autoplay loop="true" src="video_DirGen.mp4"></video>
+        <img
+          id="card"
+          src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.png"
+        />
+        <a-asset-item
+          id="avatarModel"
+          src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/softmind/scene.gltf"
+        ></a-asset-item>
+      </a-assets>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity id="example-target" mindar-image-target="targetIndex: 0">
+        <a-plane src="#card" position="0 0 0" height="1" width="0.552" rotation="0 0 90"></a-plane>
+        <a-video src="#DirGen" width="1" height="1.777" position="0 0 0.1"></a-video>  
+      </a-entity>
+    </a-scene>
+
+    <script src="script.js"></script>
+  </body>
+</html>
